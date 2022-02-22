@@ -10,7 +10,23 @@
         <meta name="author" content="Coderthemes" />
 
         <!-- App favicon -->
-        <link rel="shortcut icon" href="images/favicon.ico">
+        <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+        <link rel="manifest" href="favicon/manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
 
         <!-- Bootstrap core CSS -->
         <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css">
@@ -164,10 +180,10 @@
                             <h3 class="text-orange fs-subtitle-custome">Semua masalah kebutuhanmu pasti beres</h3>
                             <h3 class="fs-download-now">Download Sekarang :</h3>
                             <div class="row">
-                                <div class="col-lg-4">
+                                <div class="col-4 xlifedownload">
                                     <a href="https://play.google.com/store/apps/details?id=com.jasaconnect.x.life" target="_blank"><img class="img-fluid" src="assets/images/background/playstore-xs.png"></a>
                                 </div>
-                                <div class="col-lg-4">
+                                <div class="col-4 xlifedownload">
                                     <a href="https://apps.apple.com/id/app/xlife/id1548264422?l=id" target="_blank"><img class="img-fluid" src="assets/images/background/appstore-xs.png"></a>
                                 </div>
                             </div>
@@ -414,6 +430,7 @@
         <script src="assets/js/app.js"></script>
         <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
         <script type="text/javascript">
+            var xlife_matchmedia = window.matchMedia("(max-width: 768px)")
              var map = L.map('map').setView([-2.182942726364413, 114.68636919061137], 5.5);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -430,7 +447,11 @@
 
     var pinxlife = new LeafIcon({iconUrl: 'assets/images/background/pin-google-xlife.png'});
 
-    var Jakarta = L.marker([-6.2297419,106.7594779], {icon: pinxlife}).bindPopup('Jabodetabek').addTo(map);
+    var Jakarta = L.marker([-6.2297419,106.7594779], {icon: pinxlife}).bindPopup('Jakarta').addTo(map);
+    var Bogor = L.marker([-6.5453442,106.6740136], {icon: pinxlife}).bindPopup('Bogor').addTo(map);
+    var Depok = L.marker([-6.3878474,106.782778], {icon: pinxlife}).bindPopup('Depok').addTo(map);
+    var Tangerang = L.marker([-6.176683,106.5799939], {icon: pinxlife}).bindPopup('Tangerang').addTo(map);
+    var Bekasi = L.marker([-6.2845348,106.9033368], {icon: pinxlife}).bindPopup('Bekasi').addTo(map);
     var Bandung = L.marker([-6.9034482,107.6081381], {icon: pinxlife}).bindPopup('Bandung').addTo(map);
     var Semarang = L.marker([-7.0247246,110.3470251], {icon: pinxlife}).bindPopup('Semarang').addTo(map);
     var Yogyakarta = L.marker([-7.8032501,110.3573353], {icon: pinxlife}).bindPopup('Yogyakarta').addTo(map);
@@ -438,6 +459,16 @@
     var Surabaya = L.marker([-7.2756141,112.6426436], {icon: pinxlife}).bindPopup('Surabaya').addTo(map);
     var Bali = L.marker([-8.4553718,114.7913886], {icon: pinxlife}).bindPopup('Denpasar').addTo(map);
     var Makasar = L.marker([-5.1114857,119.3325874], {icon: pinxlife}).bindPopup('Makasar').addTo(map);
+
+    // matchmedia 
+
+    if (xlife_matchmedia.matches) {
+        $('.xlifedownload').removeClass('col-4');
+        $('.xlifedownload').addClass('col-6');
+        } else {
+        $('.xlifedownload').removeClass('col-6');
+        $('.xlifedownload').addClass('col-4');
+        }
         </script>
     </body>
 
